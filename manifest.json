@@ -8,6 +8,12 @@
     "description": "Sample Code",
     "applicationVersion": {
       "version": "1.0.0"
+    },
+    "dataSources": {
+      "myDataSource": {
+        "uri": "https://cdn.glitch.com/96886cc6-313e-4a24-b86e-7c54ec6fdb9c%2Fdata.json?v=1579705548296",
+        "type": "JSON"
+      }
     }
   },
   "sap.ui": {
@@ -43,6 +49,25 @@
     "contentDensities": {
       "compact": true,
       "cozy": true
+    },
+    "rootView": {
+      "viewName": "demo.view.Root",
+      "id": "rootView",
+      "type": "XML",
+      "async": true,
+      "height": "100%"
+    },
+    "models": {
+      "": {
+        "dataSource": "myDataSource",
+        "preload": true
+      },
+      "app": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "device": {
+        "type": "sap.ui.model.json.JSONModel"
+      }
     }
   }
 }
