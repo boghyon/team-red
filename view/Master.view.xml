@@ -11,7 +11,7 @@
     <f:title>
       <f:DynamicPageTitle>
         <f:heading>
-          <Title text="&lt;trainer>'s Team" wrappingType="Hyphenated" wrapping="true" />
+          <Title text="{/trainer/name}'s Team" wrappingType="Hyphenated" wrapping="true" />
         </f:heading>
         <f:actions>
           <RatingIndicator id="pokeSize"
@@ -39,13 +39,29 @@
         width="auto"
         class="sapFDynamicPageAlignContent"
         mode="SingleSelectMaster"
+        items="{/trainer/partyMembers}"
+        updateFinished=".onListUpdateFinished"
         itemPress=".navToDetailOf(${$parameters>/listItem})">
         <ObjectListItem icon="{picTiny}"
-          title="&lt;name>"
-          number="&lt;HP> / &lt;HP Max>"
+          title="{name}"
+          number="{hp} / {hpMax}"
+          numberState="{
+            parts: [ 'hp', 'hpMax' ],
+            formatter: 'calculateState'
+          }"
           numberUnit="HP"
           type="Active">
-          <ObjectAttribute text="&lt;Level>" title="Lv."/>
+          <ObjectAttribute text="{lvl}" title="Lv."/>
+          <firstStatus>
+            <ObjectStatus text="{statusConditions/0}"
+              state="{ path: 'statusConditions/0', formatter: 'getStatusConditionState' }"
+              inverted="true"/>
+          </firstStatus>
+          <secondStatus>
+            <ObjectStatus text="{statusConditions/1}"
+              state="{ path: 'statusConditions/1', formatter: 'getStatusConditionState' }"
+              inverted="true"/>
+          </secondStatus>
         </ObjectListItem>
       </List>
     </f:content>
