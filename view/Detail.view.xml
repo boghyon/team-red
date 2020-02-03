@@ -12,33 +12,50 @@
   <uxap:ObjectPageLayout showTitleInHeaderContent="false">
     <uxap:headerTitle>
       <uxap:ObjectPageHeader
-        objectImageURI="https://cdn.glitch.com/96886cc6-313e-4a24-b86e-7c54ec6fdb9c%2Fpokeball1.gif"
-        objectTitle="&lt;name>"
-        objectSubtitle="&lt;intro>"
+        objectImageURI="{pic}"
+        objectTitle="{name}"
+        objectSubtitle="{intro}"
         isObjectSubtitleAlwaysVisible="false" />
     </uxap:headerTitle>
     <uxap:headerContent>
-      <Avatar src="https://cdn.glitch.com/96886cc6-313e-4a24-b86e-7c54ec6fdb9c%2Fpokeball1.gif"
+      <Avatar src="{pic}"
         displaySize="XL"
         displayShape="Square"
         class="sapUiMediumMarginEnd">
+        <detailBox>
+          <LightBox>
+            <LightBoxItem imageSrc="{pic}" />
+          </LightBox>
+        </detailBox>
       </Avatar>
       <layout:VerticalLayout width="10rem">
-        <ObjectNumber number="#&lt;number>" />
-        <Text text="&lt;description>" wrappingType="Hyphenated" />
+        <ObjectNumber number="#{number}" />
+        <Text text="{description}" wrappingType="Hyphenated" />
       </layout:VerticalLayout>
       <layout:VerticalLayout width="13rem">
-        <ObjectAttribute title="Height" text="&lt;Height> m" />
-        <ObjectAttribute title="Weight" text="&lt;Weight> kg" />
-        <ObjectStatus title="Abilities" text="&lt;Abilities>" />
+        <ObjectAttribute title="Height" text="{Height} m" />
+        <ObjectAttribute title="Weight" text="{Weight} kg" />
+        <ObjectStatus title="Abilities" text="{Abilities}" state="Information" />
       </layout:VerticalLayout>
       <layout:VerticalLayout>
         <ProgressIndicator
-          percentValue="0"
+          percentValue="{= ${hp} / ${hpMax} * 100}"
           showValue="true"
           height="1.375rem"
+          state="{
+            parts: [ 'hp', 'hpMax' ],
+            formatter: 'calculateState'
+          }"
           displayOnly="true"
+          displayValue="{hp} of {hpMax} HP"
         />
+        <layout:HorizontalLayout>
+          <tnt:InfoLabel text="{types/0/}" class="sapUiTinyMarginEnd"
+            colorScheme="{ path: 'types/0/', formatter: 'getColorScheme' }"/>
+          <tnt:InfoLabel text="{types/1/}"
+            colorScheme="{ path: 'types/1/', formatter: 'getColorScheme' }"
+            visible="{= !!${types/1/}}" />
+        </layout:HorizontalLayout>
       </layout:VerticalLayout>
     </uxap:headerContent>
     <uxap:sections>
@@ -51,7 +68,7 @@
             width="auto"
             contextualWidth="Auto"
             popinLayout="GridSmall"
-          >
+            items="{moves}">
             <columns>
               <Column>
                 <Text text="Move Name" />
@@ -74,11 +91,12 @@
               </Column>
             </columns>
             <ColumnListItem vAlign="Middle">
-              <ObjectIdentifier title="&lt;moveName>" text="&lt;description>"/>
-              <ObjectNumber number="&lt;pp>" emphasized="false" state="Information" />
-              <ObjectNumber number="&lt;power>" />
+              <ObjectIdentifier title="{moveName}" text="{description}"/>
+              <ObjectNumber number="{pp}" emphasized="false" state="Information" />
+              <ObjectNumber number="{:= ${power} || '—' }" />
               <tnt:InfoLabel
-                text="&lt;moveType>"
+                colorScheme="{ path: 'moveType', formatter: 'getColorScheme' }"
+                text="{moveType}"
                 displayOnly="true"
               />
             </ColumnListItem>
