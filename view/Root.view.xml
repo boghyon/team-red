@@ -8,13 +8,13 @@
   <Shell title="Title"
     showLogout="false"
     backgroundOpacity="1"
-    logo="https://cdn.glitch.com/96886cc6-313e-4a24-b86e-7c54ec6fdb9c%2Fred.gif"
+    logo=""
     backgroundImage="https://cdn.glitch.com/96886cc6-313e-4a24-b86e-7c54ec6fdb9c%2Fbackground_ho-oh_and_lugia.gif"
   >
     <f:FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Transparent">
       <f:beginColumnPages>
         <mvc:XMLView viewName="demo.view.Master" async="true" />
-      </f:beginColumnPages >
+      </f:beginColumnPages>
       <f:midColumnPages>
         <mvc:XMLView viewName="demo.view.Detail" async="true" />
       </f:midColumnPages>
