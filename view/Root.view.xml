@@ -11,15 +11,12 @@
     logo="{/trainer/pic}"
     backgroundImage="https://cdn.glitch.com/96886cc6-313e-4a24-b86e-7c54ec6fdb9c%2Fbackground_ho-oh_and_lugia.gif"
   >
-    <f:FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Transparent"
-      initialBeginColumnPage="masterView"
-      initialMidColumnPage="detailView"
-    >
+    <f:FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Transparent">
       <f:beginColumnPages>
-        <mvc:XMLView id="masterView" viewName="demo.view.Master" async="true" />
+        <!-- will be added by the Router -->
       </f:beginColumnPages >
       <f:midColumnPages>
-        <mvc:XMLView id="detailView" viewName="demo.view.Detail" async="true" />
+        <!-- will be added by the Router -->
       </f:midColumnPages>
     </f:FlexibleColumnLayout>
   </Shell>

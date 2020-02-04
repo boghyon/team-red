@@ -62,11 +62,44 @@
         "dataSource": "myDataSource",
         "preload": true
       },
-      "app": {
-        "type": "sap.ui.model.json.JSONModel"
-      },
       "device": {
         "type": "sap.ui.model.json.JSONModel"
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "async": true,
+        "viewType": "XML",
+        "viewPath": "demo.view",
+        "controlId": "flexibleColumnLayout"
+      },
+      "routes": {
+        "master": {
+          "pattern": "",
+          "target": "master",
+          "layout": "OneColumn"
+        },
+        "masterDetail": {
+          "pattern": "pokemon/{pokeName}",
+          "target": [ "master", "detail" ],
+          "layout": "TwoColumnsMidExpanded"
+        }
+      },
+      "targets": {
+        "master": {
+          "viewId": "masterView",
+          "viewName": "Master",
+          "viewLevel": 1,
+          "controlAggregation": "beginColumnPages"
+        },
+        "detail": {
+          "viewId": "detailView",
+          "viewName": "Detail",
+          "controlAggregation": "midColumnPages",
+          "viewLevel": 2,
+          "transition": "show"
+        }
       }
     }
   }
