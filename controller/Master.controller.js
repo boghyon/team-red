@@ -7,12 +7,10 @@ sap.ui.define([
   
     return Controller.extend("demo.controller.Master", {
         navToDetailOf: async function(clickedItem) {
-            const rootView = await this.getOwnerComponent().getRootControl().loaded();
-            const container = rootView.byId("flexibleColumnLayout");
-            const clickedContext = clickedItem.getBindingContext();
-            const detailPage = sap.ui.getCore().byId(container.getInitialMidColumnPage());
-            detailPage.bindElement(clickedContext.getPath());
-            container.setLayout("TwoColumnsMidExpanded");
+            const router = this.getOwnerComponent().getRouter();
+            router.navTo("masterDetail", {
+              pokeName: clickedItem.getBindingContext().getProperty("name"),
+            });
         },
 
         onListUpdateFinished: function(event) {
