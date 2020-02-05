@@ -7,7 +7,8 @@
   xmlns:core="sap.ui.core"
   core:require="{
     calculateState: 'demo/model/calculateState',
-    getColorScheme: 'demo/model/getColorScheme'
+    getColorScheme: 'demo/model/getColorScheme',
+    formatMessage: 'sap/base/strings/formatMessage'
   }">
   <uxap:ObjectPageLayout showTitleInHeaderContent="false">
     <uxap:headerTitle>
@@ -33,9 +34,9 @@
         <Text text="{description}" wrappingType="Hyphenated" />
       </layout:VerticalLayout>
       <layout:VerticalLayout width="13rem">
-        <ObjectAttribute title="Height" text="{Height} m" />
-        <ObjectAttribute title="Weight" text="{Weight} kg" />
-        <ObjectStatus title="Abilities" text="{Abilities}" state="Information" />
+        <ObjectAttribute title="{i18n>height}" text="{Height} m" />
+        <ObjectAttribute title="{i18n>weight}" text="{Weight} kg" />
+        <ObjectStatus title="{i18n>abilities}" text="{Abilities}" state="Information" />
       </layout:VerticalLayout>
       <layout:VerticalLayout>
         <ProgressIndicator
@@ -47,7 +48,14 @@
             formatter: 'calculateState'
           }"
           displayOnly="true"
-          displayValue="{hp} of {hpMax} HP"
+          displayValue="{
+            parts: [
+              'i18n>currentOfMaxHP',
+              'hp',
+              'hpMax'
+            ],
+            formatter: 'formatMessage'
+          }"
         />
         <layout:HorizontalLayout>
           <tnt:InfoLabel text="{types/0/}" class="sapUiTinyMarginEnd"
@@ -59,7 +67,7 @@
       </layout:VerticalLayout>
     </uxap:headerContent>
     <uxap:sections>
-      <uxap:ObjectPageSection titleUppercase="false" title="Moves">
+      <uxap:ObjectPageSection titleUppercase="false" title="{i18n>moves}">
         <uxap:ObjectPageSubSection>
           <Table
             sticky="ColumnHeaders"
@@ -71,23 +79,23 @@
             items="{moves}">
             <columns>
               <Column>
-                <Text text="Move Name" />
+                <Text text="{i18n>moveName}" />
               </Column>
               <Column width="4rem" hAlign="End">
-                <Text text="PP" />
+                <Text text="{i18n>pp}" />
               </Column>
               <Column width="4rem"
                 minScreenWidth="Tablet"
                 demandPopin="true"
                 popinDisplay="Inline"
                 hAlign="End">
-                <Text text="Power" />
+                <Text text="{i18n>power}" />
               </Column>
               <Column width="6rem"
                 minScreenWidth="Tablet"
                 demandPopin="true"
                 popinDisplay="Inline">
-                <Text text="Type" />
+                <Text text="{i18n>type}" />
               </Column>
             </columns>
             <ColumnListItem vAlign="Middle">

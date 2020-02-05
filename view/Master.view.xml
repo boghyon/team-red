@@ -5,7 +5,8 @@
   xmlns:core="sap.ui.core"
   core:require="{
     calculateState: 'demo/model/calculateState',
-    getStatusConditionState: 'demo/model/getStatusConditionState'
+    getStatusConditionState: 'demo/model/getStatusConditionState',
+    formatMessage: 'sap/base/strings/formatMessage'
   }">
   <f:DynamicPage fitContent="true" backgroundDesign="List" headerExpanded="false">
     <f:title>
@@ -30,7 +31,7 @@
       <f:DynamicPageHeader>
         <Toolbar width="100%" style="Clear">
           <SearchField liveChange=".searchBy(${$parameters>/newValue})" />
-          <Button icon="sap-icon://sort-ascending" tooltip="Sort by name" press=".sortBy('name')" />
+          <Button icon="sap-icon://sort-ascending" tooltip="{i18n>sortByName}" press=".sortBy('name')" />
         </Toolbar>
       </f:DynamicPageHeader>
     </f:header>
@@ -49,8 +50,15 @@
             parts: [ 'hp', 'hpMax' ],
             formatter: 'calculateState'
           }"
-          numberUnit="HP"
-          type="Active">
+          numberUnit="{i18n>hp}"
+          type="Active"
+          tooltip="{
+            parts: [
+              'i18n>showDetailsOf',
+              'name'
+            ],
+            formatter: 'formatMessage'
+          }">
           <ObjectAttribute text="{lvl}" title="Lv."/>
           <firstStatus>
             <ObjectStatus text="{statusConditions/0}"
