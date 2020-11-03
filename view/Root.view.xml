@@ -11,7 +11,7 @@
     logo="{/trainer/pic}"
     backgroundImage="https://cdn.glitch.com/96886cc6-313e-4a24-b86e-7c54ec6fdb9c%2Fbackground_ho-oh_and_lugia.gif"
   >
-    <f:FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Transparent">
+    <f:FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Transparent" autoFocus="false">
       <f:beginColumnPages>
         <!-- will be added by the Router -->
       </f:beginColumnPages >
