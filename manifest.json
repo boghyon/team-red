@@ -1,11 +1,11 @@
 {
-  "_version": "1.16.0",
+  "_version": "1.28.0",
   "start_url": "index.html",
   "sap.app": {
     "id": "demo",
     "type": "application",
-    "title": "Demo",
-    "description": "Sample Code",
+    "title": "My Pkmn Team",
+    "description": "Demo application to showcase OpenUI5",
     "applicationVersion": {
       "version": "1.0.0"
     }
