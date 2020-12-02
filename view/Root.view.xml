@@ -3,7 +3,7 @@
   xmlns:f="sap.f"
   xmlns="sap.m"
   height="100%">
-  <Shell title="Title"
+  <Shell
     showLogout="false"
     backgroundOpacity="1"
     backgroundImage="https://cdn.glitch.com/96886cc6-313e-4a24-b86e-7c54ec6fdb9c%2Fbackground_ho-oh_and_lugia.gif"
