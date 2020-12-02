@@ -1,48 +1,48 @@
 {
-  "_version": "1.28.0",
-  "start_url": "index.html",
-  "sap.app": {
-    "id": "demo",
-    "type": "application",
-    "title": "My Pkmn Team",
-    "description": "Demo application to showcase OpenUI5",
-    "applicationVersion": {
-      "version": "1.0.0"
-    }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    },
-    "supportedThemes": [
-      "sap_belize_hcw",
-      "sap_belize_hcb",
-      "sap_belize",
-      "sap_belize_plus",
-      "sap_fiori_3",
-      "sap_fiori_3_hcb",
-      "sap_fiori_3_hcw",
-      "sap_fiori_3_dark"
-    ]
-  },
-  "sap.ui5": {
-    "dependencies": {
-      "minUI5Version": "1.71.0",
-      "libs": {
-        "sap.m": {},
-        "sap.f": {},
-        "sap.ui.layout": {},
-        "sap.ui.unified": {},
-        "sap.tnt": {},
-        "sap.uxap": {}
-      }
-    },
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    }
-  }
+	"_version": "1.28.0",
+	"start_url": "index.html",
+	"sap.app": {
+		"id": "demo",
+		"type": "application",
+		"title": "My Pkmn Team",
+		"description": "Demo application to showcase OpenUI5",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize_hcw",
+			"sap_belize_hcb",
+			"sap_belize",
+			"sap_belize_plus",
+			"sap_fiori_3",
+			"sap_fiori_3_hcb",
+			"sap_fiori_3_hcw",
+			"sap_fiori_3_dark"
+		]
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.71.0",
+			"libs": {
+				"sap.m": {},
+				"sap.f": {},
+				"sap.ui.layout": {},
+				"sap.ui.unified": {},
+				"sap.tnt": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	}
 }
