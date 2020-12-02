@@ -6,7 +6,7 @@ sap.ui.define([
     "use strict";
   
     return Controller.extend("demo.controller.Master", {
-        navToDetailOf: async function(clickedItem) {
+        navToDetailOf: function(clickedItem) {
             const router = this.getOwnerComponent().getRouter();
             router.navTo("masterDetail", {
               pokeName: clickedItem.getBindingContext().getProperty("name"),

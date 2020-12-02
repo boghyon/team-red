@@ -32,10 +32,10 @@
         <ObjectNumber number="#{number}" />
         <Text text="{description}" wrappingType="Hyphenated" />
       </layout:VerticalLayout>
-      <layout:VerticalLayout width="13rem">
+      <layout:VerticalLayout width="12rem">
         <ObjectAttribute title="Height" text="{Height} m" />
         <ObjectAttribute title="Weight" text="{Weight} kg" />
-        <ObjectStatus title="Abilities" text="{Abilities}" state="Information" />
+        <ObjectStatus title="Ability" text="{Abilities}" state="Information" />
       </layout:VerticalLayout>
       <layout:VerticalLayout>
         <ProgressIndicator
