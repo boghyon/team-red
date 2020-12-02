@@ -61,9 +61,6 @@
       "": {
         "dataSource": "myDataSource",
         "preload": true
-      },
-      "device": {
-        "type": "sap.ui.model.json.JSONModel"
       }
     }
   }

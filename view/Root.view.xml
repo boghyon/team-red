@@ -3,18 +3,15 @@
   xmlns:f="sap.f"
   xmlns="sap.m"
   displayBlock="true"
-  height="100%"
->
+  height="100%">
   <Shell title="Title"
     showLogout="false"
     backgroundOpacity="1"
-    logo="{/trainer/pic}"
     backgroundImage="https://cdn.glitch.com/96886cc6-313e-4a24-b86e-7c54ec6fdb9c%2Fbackground_ho-oh_and_lugia.gif"
-  >
+    logo="{/trainer/pic}">
     <f:FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Transparent"
       initialBeginColumnPage="masterView"
-      initialMidColumnPage="detailView"
-    >
+      initialMidColumnPage="detailView">
       <f:beginColumnPages>
         <mvc:XMLView id="masterView" viewName="demo.view.Master" async="true" />
       </f:beginColumnPages >
