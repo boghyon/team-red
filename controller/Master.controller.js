@@ -4,8 +4,8 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("demo.controller.Master", {
-		navToDetailOf: async function (clickedItem) {
-			const rootView = await this.getOwnerComponent().getRootControl().loaded();
+		navToDetail: function () {
+			const rootView = this.getOwnerComponent().getRootControl();
 			const container = rootView.byId("flexibleColumnLayout");
 			container.setLayout("TwoColumnsMidExpanded");
 		},

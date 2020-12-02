@@ -1,5 +1,5 @@
 {
-  "_version": "1.16.0",
+  "_version": "1.28.0",
   "start_url": "index.html",
   "sap.app": {
     "id": "demo",
