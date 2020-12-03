@@ -2,11 +2,7 @@
   xmlns:mvc="sap.ui.core.mvc"
   xmlns:f="sap.f"
   xmlns="sap.m"
-  xmlns:core="sap.ui.core"
-  core:require="{
-    calculateState: 'demo/model/calculateState',
-    getStatusConditionState: 'demo/model/getStatusConditionState'
-  }">
+  xmlns:core="sap.ui.core">
   <f:DynamicPage fitContent="true" backgroundDesign="List" headerExpanded="false">
     <f:title>
       <f:DynamicPageTitle>

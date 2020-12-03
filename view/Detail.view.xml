@@ -4,11 +4,7 @@
   xmlns:layout="sap.ui.layout"
   xmlns="sap.m"
   xmlns:tnt="sap.tnt"
-  xmlns:core="sap.ui.core"
-  core:require="{
-    calculateState: 'demo/model/calculateState',
-    getColorScheme: 'demo/model/getColorScheme'
-  }">
+  xmlns:core="sap.ui.core">
   <uxap:ObjectPageLayout showTitleInHeaderContent="false">
     <uxap:headerTitle>
       <uxap:ObjectPageHeader
