@@ -76,7 +76,11 @@
             width="auto"
             contextualWidth="Auto"
             popinLayout="GridSmall"
-            items="{moves}">
+            items="{
+              path: 'moves',
+              templateShareable: false,
+              key: 'moveName'
+            }">
             <columns>
               <Column>
                 <Text text="{i18n>moveName}" />

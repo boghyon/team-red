@@ -40,7 +40,11 @@
         width="auto"
         class="sapFDynamicPageAlignContent"
         mode="SingleSelectMaster"
-        items="{/trainer/partyMembers}"
+        items="{
+          path: '/trainer/partyMembers',
+          templateShareable: false,
+          key: 'name'
+        }"
         updateFinished=".onListUpdateFinished"
         itemPress=".navToDetailOf(${$parameters>/listItem})">
         <ObjectListItem icon="{picTiny}"
